@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            tu peso en un lugar donde
+            pesas menos
+        </title>
+    </head>
+    <body>
+        <h1>
+            Tu peso en otro planeta
+        </h1>
+        <p>
+            Este programa es capaz de determinar 
+            tu peso en otros planetas del sistema solar
+        </p>
+        <script>
+            var usuario = prompt("Cual es tu peso?");
+            var planeta = prompt("Elige un planeta del sistema solar");
+            var gMercury = 3.7;
+            var gVenus = 8.87;
+            var gGround = 9.8;
+            var gMarte = 3.7;
+            var gJupiter = 24.8;
+            var gSaturn = 18.44;
+            var gUrano = 8.87;
+            var gNeptuno = 11.15;
+            var peso = parseInt(usuario);
+            var pesoFinal;
+            var gPlanet;
+            /*if(planeta == 1){
+                pesoFinal = peso * gMarte /gGround;
+            }else if (planeta == 2){
+                pesoFinal = peso * gJupiter / gGround;
+            }else{
+                <p>
+                document.write("<strong>Opcion no valida </strong>")
+                </p>
+            }*/
+            
+            switch(planeta){
+                case "Mercurio":case "mercurio":
+                    gPlanet = gMercury
+                    break;
+                case "Venus":case "venus":
+                    gPlanet = gVenus
+                    break;
+                case "Tierra":case "tierra":
+                    gPlanet = gGround
+                    break;
+                case "Marte":case "marte":
+                    gPlanet = gMarte
+                    break;
+                case "Jupiter":case "jupiter":
+                    gPlanet = gJupiter
+                    break;
+                case "Saturno":case "saturno":
+                    gPlanet = gSaturn
+                    break;
+                case "Urano":case "urano":
+                    gPlanet = gUrano
+                    break;
+                case "Neptuno":case "neptuno":
+                    gPlanet = gNeptuno
+                    break;
+                default:
+                gPlanet=1000000;
+            }
+            pesoFinal = peso * gPlanet/ gGround;
+            pesoFinal = parseInt(pesoFinal);
+            document.write ("Tu peso en <strong>" + planeta + 
+            "</strong> es <strong>"+ pesoFinal +
+            " kilogramos</strong>")
+        </script>
+    </body>
+</html>
