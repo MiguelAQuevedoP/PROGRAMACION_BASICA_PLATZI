@@ -13,9 +13,9 @@ frame.width = slider.value;
 frame.addEventListener("mousedown", clickMouse);
 frame.addEventListener("mouseup", noClickMouse);
 frame.addEventListener("mousemove", drawMouse);
-btnBlack.addEventListener("click", console.log("presionaste el boton negro"));
+btnBlack.addEventListener("click", drawMouse("black"));
 btnBlue.addEventListener("click", drawMouse("#008CBA"));
-btnYellow.addEventListener("click", console.log("presionaste el boton yellow"));
+btnYellow.addEventListener("click", drawMouse("yellow"));
 btnWhite.addEventListener("click", drawMouse("white"));
 
 //bordes de canvas
