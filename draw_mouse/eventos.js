@@ -5,7 +5,7 @@ var color = document.getElementById("colorSelect");
 var slider = document.getElementById("slider");
 let mouse = false;
 
-console.log("valor color "+ color.getAttribute.toString);
+console.log("valor color "+ color.value);
 frame.addEventListener("mousedown", clickMouse);
 frame.addEventListener("mouseup", noClickMouse);
 frame.addEventListener("mousemove", drawMouse);
@@ -26,7 +26,7 @@ function noClickMouse(){
 
 function drawMouse(){
     if(mouse == true){
-        drawLine("black", event.layerX-1, event.layerY-1, event.layerX+1, event.layerY+1, paper);
+        drawLine(color.value, event.layerX-1, event.layerY-1, event.layerX+1, event.layerY+1, paper);
     }
 }
 
