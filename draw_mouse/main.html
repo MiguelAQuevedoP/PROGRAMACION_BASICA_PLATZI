@@ -3,24 +3,6 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Drawing with mouse</title>
-        <style>
-            .button {
-              border: 1px solid black;
-              color: white;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-            }
-            .btnBlack {background-color: black;}
-            .btnBlue {background-color: #008CBA;}
-            .btnYellow {background-color: yellow; color: black;}
-            .btnPurple{background-color: purple;}
-            .btnWhite {background-color: white; color: black;}
-        </style>
     </head>
     <body>
         <strong>¿De qué tamaño quieres el canva?</strong>
@@ -29,14 +11,10 @@
         <br/>
         <strong>¿De qué color quieres el pincel?</strong>
         <br/>
-        <button class="button btnBlack" id="btnCBlack">Black</button>
-        <button class="button btnBlue" id="btnCBlue">Blue</button>
-        <button class="button btnYellow" id="btnCYellow">Yellow</button>
-        <button class="button btnPurple" id="btnCPurple">Purple</button>
-        <button class="button btnWhite" id="btnCWhite">white</button>
+        <input type="color" id="colorSelect">
         <br/>
         <p>Mueve tu mouse</p>
-        <canvas id="drawArea"></canvas>
+        <canvas height="300" width="500" id="drawArea"></canvas>
         <script src="eventos.js"></script>
         <p>está precioso tu dibujo crack, sigue asi</p>
     </body>
