@@ -3,12 +3,15 @@ var paper = frame.getContext("2d");
 var borderColor = "black";
 var color = document.getElementById("colorSelect");
 var slider = document.getElementById("slider");
+var color;
 let mouse = false;
 
 console.log("valor color "+ color.value);
 frame.addEventListener("mousedown", clickMouse);
 frame.addEventListener("mouseup", noClickMouse);
 frame.addEventListener("mousemove", drawMouse);
+
+console.log("valor slider "+slider.value);
 
 //bordes de canvas
 drawLine(borderColor, 1, 1, 1, frame.height-1, paper);//left vertical line
