@@ -3,7 +3,6 @@ var paper = frame.getContext("2d");
 var borderColor = "black";
 var color = document.getElementById("colorSelect");
 var slider = document.getElementById("slider");
-var color;
 let mouse = false;
 
 console.log("valor color "+ color.value);
