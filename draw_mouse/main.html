@@ -5,16 +5,20 @@
         <title>Drawing with mouse</title>
     </head>
     <body>
+        <h1>INTENTO DE PAINT WEB</h1>
         <strong>¿De qué tamaño quieres el canva?</strong>
         <br/>
-        <input type="range" min="0" max="1000" value="300" id="slider">
+        Ancho:
+        <input type="text" id="txtWidth">
+        Alto:
+        <input type="text" id="txtHeight">
+        <input type="button" value="CAMBIAR TAMAÑO" id="btnChangeSize"/>
         <br/>
         <strong>¿De qué color quieres el pincel?</strong>
-        <br/>
         <input type="color" id="colorSelect">
         <br/>
         <p>Mueve tu mouse</p>
-        <canvas height="300" width="500" id="drawArea"></canvas>
+        <canvas id="drawArea"></canvas>
         <script src="eventos.js"></script>
         <p>está precioso tu dibujo crack, sigue asi</p>
     </body>

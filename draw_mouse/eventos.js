@@ -2,34 +2,28 @@ var frame = document.getElementById("drawArea");
 var paper = frame.getContext("2d");
 var borderColor = "black";
 var color = document.getElementById("colorSelect");
-var slider = document.getElementById("slider");
+var txtWidth = document.getElementById("txtWidth");
+var txtHeight = document.getElementById("txtHeight");
+var btnSize = document.getElementById("btnChangeSize");
+var x;
+var y;
 let mouse = false;
 
-console.log("valor color "+ color.value);
-frame.addEventListener("mousedown", clickMouse);
-frame.addEventListener("mouseup", noClickMouse);
+btnSize.addEventListener("click", changeSizeCanva);
 frame.addEventListener("mousemove", drawMouse);
-
-console.log("valor slider "+slider.value);
-
+drawLine(color, x-1, y-1, x+1, y+1, paper);
 //bordes de canvas
 drawLine(borderColor, 1, 1, 1, frame.height-1, paper);//left vertical line
 drawLine(borderColor, frame.width-1, 1, frame.width-1, frame.height-1, paper);//right vertical line
 drawLine(borderColor, 1, 1, frame.width-1, 1, paper);//up horizontal line
 drawLine(borderColor, 1, frame.height-1, frame.width-1, frame.height-1, paper);//down horizontal line
 
-function clickMouse(){
-    mouse = true;
-}
-
-function noClickMouse(){
-    mouse = false;
-}
-
-function drawMouse(){
-    if(mouse == true){
-        drawLine(color.value, event.layerX-1, event.layerY-1, event.layerX+1, event.layerY+1, paper);
+function drawMouse(event){
+    if(event.buttons == 1){
+        drawLine(color.value, x, y, event.offsetX, event.offsetY, paper);
     }
+    x = event.offsetX
+    y = event.offsetY
 }
 
 function drawLine(color, xi, yi, xf, yf, lienzo){
@@ -40,4 +34,15 @@ function drawLine(color, xi, yi, xf, yf, lienzo){
     lienzo.lineTo(xf,yf);
     lienzo.stroke();
     lienzo.closePath();
+}
+
+function changeSizeCanva(){
+    console.log("tamaño Height: "+ txtHeight.value);
+    console.log("tamaño width: "+txtWidth.value);
+    frame.width = parseInt(txtWidth.value);
+    frame.height = parseInt(txtHeight.value);
+    drawLine(borderColor, 1, 1, 1, frame.height-1, paper);//left vertical line
+    drawLine(borderColor, frame.width-1, 1, frame.width-1, frame.height-1, paper);//right vertical line
+    drawLine(borderColor, 1, 1, frame.width-1, 1, paper);//up horizontal line
+    drawLine(borderColor, 1, frame.height-1, frame.width-1, frame.height-1, paper);//down horizontal line
 }
