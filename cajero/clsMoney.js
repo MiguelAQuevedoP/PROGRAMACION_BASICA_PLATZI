@@ -1,18 +1,16 @@
-/*
-ejercicios:
--poner imagenes en los billetes
--acomodar caja para no tener que recargar hasta que
- se quede sin dinero.
-*/
-
 class money{
     constructor(price, amount){
+        this.image = new Image();
         this.price = price;
         this.amount = amount;
+    }
+    view(){
+        document.body.appendChild(this.image);
     }
 }
 
 function giveMoney(){
+    var arrayObtained = [];//array de dinero obtenido
     var txtMoney = document.getElementById("txtMoney");
     amountMoney = parseInt(txtMoney.value);
     for (var i = 0; i < arrayMoney.length; i++){
@@ -30,23 +28,31 @@ function giveMoney(){
         }
     }
     if(amountMoney > 0){
-        result.innerHTML = "No tengo esa cantidad";
+        result.innerHTML += "Cajero sin el dinero suficiente o sin billetes de esa denominación"
     }
     else{
-        for(var i of arrayObtained){
-            if(i.amount > 0){
-                result.innerHTML += i.amount + " billetes de: $" + i.price + "<hr/>";
+        for(var b of arrayObtained){
+            if(b.amount > 0){
+                result.innerHTML += b.amount + " billetes de: <br/>"
+                +"<img src=" + images[b.price] + " /><br/>";
             }
         }
     }
+    result.innerHTML += "<hr/>";
+    console.log(arrayMoney);
+    
 }
-var arrayMoney =[];//genera el array de objetos
-var arrayObtained = [];//array de dinero obtenido
-
+var arrayMoney = [];//genera el array de objetos
 arrayMoney.push(new money(100,10));
 arrayMoney.push(new money(50,10));
-arrayMoney.push(new money(20,30));
+arrayMoney.push(new money(20,20));
 arrayMoney.push(new money(10,20));
+
+var images = [];
+images[100] = "100.png";
+images[50] = "50.png";
+images[20] = "20.png";
+images[10] = "10.png";
 
 var div = 0;
 var amountObtained = 0;
